@@ -1,17 +1,23 @@
-# Blockchain-Streaming
+## Blockchain Streaming Analytics
 
-To start the zookeeper server issue the following command.
+This code was tested in Windows environment.
 
-`zookeeper-server-start ../../config/zookeeper.properties`
+To start the zookeeper server execute the following command in command prompt.
 
-1. Kafka_Producer_Script:
+`bin\windows\zookeeper-server-start ../../config/zookeeper.properties`
+
+To start the Kafka server execute the following command in command prompt.
+
+`bin\windows\kafka-server-start ../../config/server.properties`
+
+#### Kafka_Producer_Script:
   This script contins code to start a kafka producer and send messages to a topic.
   It also writes the message to storage(as I had issues in setting up maven for spark kafka integration).
-2. Count_to_redis:
+#### Count_to_redis:
   This script will read data with spark and write the count every minute to redis server
-3. Kafka_Consumer_Script:
-  This script will recieve messages from kafka stream and stores in a different path. hence demonstrating consumer.
-4. Flask-RESTAPI-Service:
-  This script has REST API Exposed, so that API calls can be made with clients.(logic to give out actual results were not completed)
+#### Kafka_Consumer_Script:
+  This script will recieve messages from kafka stream and stores in a different path. hence demonstrating consumer-producer communication.
+#### Flask-RESTAPI-Service:
+  This script has REST API Exposed, so that API calls can be made with clients. Each endpoints are associated with a function that returns relevant values
 
 Thanks for the opportunity.

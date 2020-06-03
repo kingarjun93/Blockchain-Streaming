@@ -1,12 +1,15 @@
+#Importing Modules
 from kafka import KafkaConsumer
 import os
 import json
 import datetime
-#from time import sleep
 
+#Subscribing Kafka Consumer to the topic
 consumer = KafkaConsumer('BlockchainTopic')
 test=''
 i=0
+
+#Store the message for every msg recieved in consumer demonstrating Producer - Consumer communication
 for msg in consumer:
     now = datetime.datetime.now()
     folder_path = 'D:\MAD tasks\Transactions_consumer\yearno='+str(now.year)+'\monthno='+str(now.month)+'\dayno='+str(now.day)+'\hourno='+str(now.hour)+'\minno='+ str(now.minute)+'\\'
@@ -19,8 +22,7 @@ for msg in consumer:
     text_file.write(str(result))
     text_file.close()
     
-    print("message ",i," sent...")
+    print("message ",i," recieved...")
     i=i+1
-    #producer.send('BlockchainTopic', bytes(result.encode('utf_8')))
     
     
