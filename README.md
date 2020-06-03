@@ -1,5 +1,9 @@
 # Blockchain-Streaming
 
+To start the zookeeper server issue the following command.
+
+`zookeeper-server-start ../../config/zookeeper.properties`
+
 1. Kafka_Producer_Script:
   This script contins code to start a kafka producer and send messages to a topic.
   It also writes the message to storage(as I had issues in setting up maven for spark kafka integration).
